@@ -18,12 +18,11 @@ import UIKit
 
 final class DragGestureController {
     var insets: UIEdgeInsets = UIEdgeInsets.zero
-    var currentPosition: PiPViewCoordinator.Position? = nil
 
     private var frameBeforeDragging: CGRect = CGRect.zero
     private weak var view: UIView?
     private lazy var panGesture: UIPanGestureRecognizer = {
-        UIPanGestureRecognizer(target: self,
+        return UIPanGestureRecognizer(target: self,
                                action: #selector(handlePan(gesture:)))
     }()
 
@@ -40,7 +39,7 @@ final class DragGestureController {
     }
 
     @objc private func handlePan(gesture: UIPanGestureRecognizer) {
-        guard let view = view else { return }
+        guard let view = self.view else { return }
 
         let translation = gesture.translation(in: view.superview)
         let velocity = gesture.velocity(in: view.superview)
@@ -75,7 +74,8 @@ final class DragGestureController {
                            initialSpringVelocity: initialSpringVelocity,
                            options: .curveLinear,
                            animations: {
-                view.frame = frame })
+                view.frame = frame 
+                }, completion: nil)
 
         default:
             break
@@ -84,7 +84,7 @@ final class DragGestureController {
 
     private func calculateFinalPosition() -> CGPoint {
         guard
-            let view = view,
+            let view = self.view,
             let bounds = view.superview?.frame
         else {
             return CGPoint.zero
@@ -110,26 +110,19 @@ final class DragGestureController {
             goUp = location.y < bounds.midY
         }
 
-        if (goLeft && goUp) {
-            currentPosition = .upperLeftCorner
-        }
+        let finalPosX: CGFloat =
+            goLeft
+                ? adjustedBounds.origin.x
+                : bounds.size.width - insets.right  - currentSize.width
+        let finalPosY: CGFloat =
+            goUp
+                ? adjustedBounds.origin.y
+                : bounds.size.height - insets.bottom - currentSize.height
 
-        if (!goLeft && goUp) {
-            currentPosition = .upperRightCorner
-        }
-
-        if (!goLeft && !goUp) {
-            currentPosition = .lowerRightCorner
-        }
-
-        if (goLeft && !goUp) {
-            currentPosition = .lowerLeftCorner
-        }
-        
-        return currentPosition!.getOriginIn(bounds: adjustedBounds, size: currentSize)
+        return CGPoint(x: finalPosX, y: finalPosY)
     }
 
     private func magnitude(vector: CGPoint) -> CGFloat {
-        sqrt(pow(vector.x, 2) + pow(vector.y, 2))
+        return sqrt(pow(vector.x, 2) + pow(vector.y, 2))
     }
 }

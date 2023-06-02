@@ -54,7 +54,7 @@ export { default as IconMessage } from './message.svg';
 export { default as IconMeter } from './meter.svg';
 export { default as IconMic } from './mute_melp.svg';
 export { default as IconMicSlash } from './unmute_melp.svg';
-export { default as IconModerator } from './moderator.svg';
+export { default as IconModerator } from './admin.svg';
 export { default as IconNoiseSuppressionOff } from './noise-suppression-off.svg';
 export { default as IconNoiseSuppressionOn } from './noise-suppression-on.svg';
 export { default as IconArrowRight } from './arrow-right.svg';

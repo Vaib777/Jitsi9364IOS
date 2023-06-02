@@ -47,4 +47,10 @@
 - (void)setVideoMuted:(BOOL)muted;
 - (void)setClosedCaptionsEnabled:(BOOL)enabled;
 
+//Added for Melp
+-(void)startTimer;
+-(void)stopTimer;
++(void)sendConnectionStatus:(NSString *_Nullable)status;
+-(BOOL)isAudioCallSpeakerClicked;
+
 @end

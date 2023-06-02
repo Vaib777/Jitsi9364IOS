@@ -26,10 +26,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>CFBundleURLName</key>
-			<string>org.jitsi.meet</string>
+			<string>com.jitsi.meets</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>org.jitsi.meet</string>
+				<string>com.jitsi.meets</string>
 			</array>
 		</dict>
 		<dict>
@@ -57,6 +57,13 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>New Exception Domain</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
 			<key>localhost</key>
 			<dict>
 				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
@@ -105,5 +112,14 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+  <key>UIAppFonts</key>
+  <array>
+    <string>AkzidenzGroteskPro-Bold.otf</string>
+    <string>AkzidenzGroteskPro-It.otf</string>
+    <string>AkzidenzGroteskPro-Light.otf</string>
+    <string>AkzidenzGroteskPro-Md.otf</string>
+    <string>AkzidenzGroteskPro-Regular.otf</string>
+    <string>AkzidenzGroteskPro-Super.otf</string>
+  </array>
 </dict>
 </plist>

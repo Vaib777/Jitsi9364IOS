@@ -28,25 +28,40 @@
 -             (BOOL)application:(UIApplication *)application
   didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     JitsiMeet *jitsiMeet = [JitsiMeet sharedInstance];
-
+  
+    NSURL *url = [NSURL URLWithString:@"https://picsum.photos/id/237/200/300"];
+    NSURL *url2 = [NSURL URLWithString:@"https://i.pinimg.com/originals/62/ae/fb/62aefb044922a5a847546e30b9036913.jpg"];
+    JitsiMeetUserInfo *userInfo = [[JitsiMeetUserInfo alloc] initWithDisplayName:@"IOS APP" andEmail:@"abc@example.com" andAvatar:url2];
+    
     jitsiMeet.conferenceActivityType = JitsiMeetConferenceActivityType;
-    jitsiMeet.customUrlScheme = @"org.jitsi.meet";
+    jitsiMeet.customUrlScheme = @"com.jitsi.meets";
     jitsiMeet.universalLinkDomains = @[@"meet.jit.si", @"alpha.jitsi.net", @"beta.meet.jit.si"];
 
+    IncomingCallInfo *incomingCallInfo = [[IncomingCallInfo alloc] initWithCallerAvatarURL:@"https://i.pinimg.com/originals/62/ae/fb/62aefb044922a5a847546e30b9036913.jpg" andCallerName:@"" andCallerDetails:@"John Doe" andhasVideo:true];
+    
+
     jitsiMeet.defaultConferenceOptions = [JitsiMeetConferenceOptions fromBuilder:^(JitsiMeetConferenceOptionsBuilder *builder) {
-        [builder setFeatureFlag:@"welcomepage.enabled" withBoolean:YES];
+        [builder setFeatureFlag:@"welcomepage.enabled" withBoolean:NO];
         [builder setFeatureFlag:@"resolution" withValue:@(360)];
         [builder setFeatureFlag:@"ios.screensharing.enabled" withBoolean:YES];
         [builder setFeatureFlag:@"ios.recording.enabled" withBoolean:YES];
         builder.serverURL = [NSURL URLWithString:@"https://meet.jit.si"];
-#if TARGET_IPHONE_SIMULATOR
-        // CallKit has started to create problems starting with the iOS 16 simulator.
-        // Disable it since it never worked in the simulator anyway.
-        [builder setFeatureFlag:@"call-integration.enabled" withBoolean:NO];
-#endif
-    }];
+        [builder setRoom:@"melp_test"];
+      
+//        [builder setToken:@"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJtZWxwX2NvbmYiLCJzdWIiOiJtZWV0Lm1lbHBhcHAuY29tIiwibW9kZXJhdG9yIjp0cnVlLCJpc3MiOiJtZWxwX2NvbmZfOCIsImNvbnRleHQiOnsiY2FsbGVlIjp7Im5hbWUiOiIiLCJpZCI6IjdjMmhsN2UwIiwiYXZhdGFyIjoiIiwiZW1haWwiOiIifSwidXNlciI6eyJuYW1lIjoiUGFua2FqIiwiaWQiOiI3YzJobDdlMCIsImF2YXRhciI6Imh0dHBzOi8vY2RubWVkaWEtZm0ubWVscGFwcC5jb20vN2MyaGw3ZTA1YjdrL2U3NzFAdXNlci5qcGVnP3Nlc3Npb25pZD04NHBuemg4bGQ4OHcmaXN0aHVtYj0xIiwiZW1haWwiOiI3YzJobDdlMEBtZWxwLmNvbSJ9LCJncm91cCI6Im9uZXRvb25lIn0sImlhdCI6MTY3NTY2NTY0Mywicm9vbSI6ImU1ZDdmNjI5NjI1NTZhZWZhOWNjMWRjZWNkZjVmOTc2Iiwicm9vbU5hbWUiOiJNaWNoYWVsIEFyb3JhIiwiZXhwIjoxNjc1NzA4ODQzfQ.NkBmCC8bvGt8WdHUwHR0pGyvyViHwKL-jg6SlxnRQVE"];
 
-  [jitsiMeet application:application didFinishLaunchingWithOptions:launchOptions];
+        [builder setUserInfo:userInfo];
+        [builder setGroupCall:NO];
+        [builder setGroupCall:YES];
+        [builder setAudioOnly:YES];
+        [builder setIsPrivateRoom:NO];
+        [builder setTeamName:@"Melp Discussion Discussion Discussion Discussion Discussion Discussion"];
+        [builder setUserPicUrl:@"https://i.pinimg.com/originals/62/ae/fb/62aefb044922a5a847546e30b9036913.jpg"];
+        [builder setIncomingCallInfo:incomingCallInfo];
+          
+        }];
+        
+        [jitsiMeet application:application didFinishLaunchingWithOptions:launchOptions];
 
     // Initialize Crashlytics and Firebase if a valid GoogleService-Info.plist file was provided.
   if ([FIRUtilities appContainsRealServiceInfoPlist]) {
@@ -58,7 +73,7 @@
 
     ViewController *rootController = (ViewController *)self.window.rootViewController;
     [jitsiMeet showSplashScreen:rootController.view];
-
+    
     return YES;
 }
 

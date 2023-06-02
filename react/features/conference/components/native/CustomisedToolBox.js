@@ -33,6 +33,7 @@ import { translate } from '../../../base/i18n/functions';
 import { connect } from 'react-redux';
 import { openSheet } from '../../../base/dialog/actions';
 
+
 type Props = AbstractButtonProps & {
 
     /**
@@ -42,7 +43,7 @@ type Props = AbstractButtonProps & {
 };
 
 
-
+const { OpenMelpModule } = NativeModules;
 
 
 
@@ -90,13 +91,12 @@ class CustomisedToolBox extends Component<Props, *> {
 
     _desktopIconClicked() {
 
-        NativeModules.NativeCallsNew.showDesktop();
-
+        OpenMelpModule.showDesktop();
       //  OpenMelpChat.showDesktop();
     }
     _addToCall() {
 
-       NativeModules.NativeCallsNew.addToCall();
+        OpenMelpModule.addToCall();
         //AudioMode.shareMeetingInfo(true);
     }
     _chatClicked(){
@@ -114,12 +114,9 @@ class CustomisedToolBox extends Component<Props, *> {
 
 
    }
-
-
-
     setHoldState(isHoldOn) {
         this.setState({isHoldOn});
-      OpenMelpChat.holdclick(isHoldOn);
+      OpenMelpModule.holdclick(isHoldOn);
     }
 
     constructor(props){

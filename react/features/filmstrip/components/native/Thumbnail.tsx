@@ -239,7 +239,7 @@ class Thumbnail extends PureComponent<IProps> {
                     style = { ((audioMuted || renderModeratorIndicator) && styles.bottomIndicatorsContainer
                         ) as StyleType }>
                     { audioMuted && !_isVirtualScreenshare && <AudioMutedIndicator /> }
-                    { !tileView && _pinned && <PinnedIndicator />}
+                    {/* { !tileView && _pinned && <PinnedIndicator />} */}
                     { renderModeratorIndicator && !_isVirtualScreenshare && <ModeratorIndicator />}
                     { !tileView && (isScreenShare || _isVirtualScreenshare) && <ScreenShareIndicator /> }
                 </Container>
@@ -411,8 +411,7 @@ function _mapStateToProps(state: IReduxState, ownProps: any) {
     const participantCount = getParticipantCountWithFake(state);
     const renderDominantSpeakerIndicator = participant?.dominantSpeaker && participantCount > 2;
     const _isEveryoneModerator = isEveryoneModerator(state);
-    const renderModeratorIndicator = tileView && !_isEveryoneModerator
-        && participant?.role === PARTICIPANT_ROLE.MODERATOR;
+    const renderModeratorIndicator = participant?.role === PARTICIPANT_ROLE.MODERATOR;
     const { gifUrl: gifSrc } = getGifForParticipant(state, id ?? '');
     const mode = getGifDisplayMode(state);
     const { tileViewDimensions } = state['features/filmstrip'];

@@ -15,7 +15,7 @@
  */
 
 #import <Intents/Intents.h>
-
+#import <WebRTC/RTCLogging.h>
 #import "Orientation.h"
 
 #import "JitsiMeet+Private.h"
@@ -25,8 +25,6 @@
 #import "ReactUtils.h"
 #import "RNSplashScreen.h"
 #import "ScheenshareEventEmiter.h"
-
-#import <react-native-webrtc/WebRTCModuleOptions.h>
 
 #if !defined(JITSI_MEET_SDK_LITE)
 #import <RNGoogleSignin/RNGoogleSignin.h>
@@ -54,12 +52,6 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-#if 0
-        // Initialize WebRTC options.
-        WebRTCModuleOptions *options = [WebRTCModuleOptions sharedInstance];
-        options.loggingSeverity = RTCLoggingSeverityInfo;
-#endif
-
         // Initialize the one and only bridge for interfacing with React Native.
         _bridgeWrapper = [[RCTBridgeWrapper alloc] init];
         
@@ -71,6 +63,11 @@
 
         // Register a log handler for React.
         registerReactLogHandler();
+
+#if 0
+        // Enable WebRTC logs
+        RTCSetMinDebugLogLevel(RTCLoggingSeverityInfo);
+#endif
     }
 
     return self;
@@ -251,6 +248,14 @@
 
 - (ExternalAPI *)getExternalAPI {
     return [_bridgeWrapper.bridge moduleForClass:ExternalAPI.class];
+}
+
+-(BOOL)audioSpeakerClickedStatus{
+    
+    return _isAudioSpeakerClicked;
+}
+-(void)updateAudioSpeakerStatus:(BOOL)isSpeakerClicked{
+    _isAudioSpeakerClicked = isSpeakerClicked;
 }
 
 @end

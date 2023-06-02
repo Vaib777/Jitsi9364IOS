@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import { BackHandler, NativeModules, SafeAreaView, StatusBar, View , DeviceEventEmitter} from 'react-native';
+import { BackHandler, NativeModules, SafeAreaView, StatusBar, View , DeviceEventEmitter, NativeEventEmitter} from 'react-native';
 import { withSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { appNavigate } from '../../../app/actions';
@@ -57,6 +57,8 @@ import CalleeDetails from './CalleeDetails';
 import { Chat } from '../../../chat';
 import ConferenceOld from './Conferenceold';
 import { getFeatureFlag } from '../../../base/flags/functions';
+const { OpenMelpModule } = NativeModules;
+
 
 
 var totalUser = '0';
@@ -387,7 +389,7 @@ class Conference extends AbstractConference<Props, State> {
 }
 
 showAttendees() {
-    if(OpenMelpChat.showAttendees){
+    if(OpenMelpModule.showAttendees){
 
       const { participants } = this.props;
 
@@ -399,7 +401,7 @@ for (const [id, attendee] of participants) {
  }
 }
 //AudioMode.participantArray(array);
-        OpenMelpChat.showAttendees(array);
+OpenMelpModule.showAttendees(array);
     }
     //this.setState({showAttendees: !this.state.showAttendees});
 }
@@ -500,7 +502,7 @@ _setSpeakerState(speakerOn){
             return this._renderContentForReducedUi();
         }
 
-        OpenMelpChat.isAudioMode(true);
+        OpenMelpModule.isAudioMode(true);
 
         return (
             !audioOnly ? <ConferenceOld />
@@ -657,7 +659,7 @@ function _mapStateToProps(state, ownProps) {
     const _settings = state['features/base/settings'];
 if(totalUser!=participantsCount){
     totalUser  = participantsCount
-NativeModules.NativeCallsNew.totalUsers(participantsCount);
+    OpenMelpModule.totalUsers(participantsCount);
 }
 
 

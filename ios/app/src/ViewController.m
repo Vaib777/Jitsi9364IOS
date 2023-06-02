@@ -33,6 +33,15 @@
     view.delegate = self;
 
     [view join:[[JitsiMeet sharedInstance] getInitialConferenceOptions]];
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 10 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+      [view startTimer];
+    });
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(OpenChat)
+                                               name:@"OPEN_CHAT"
+                                             object:nil];
+
 }
 
 // JitsiMeetViewDelegate
@@ -129,7 +138,13 @@
 - (void)videoMutedChanged:(NSDictionary *)data {
   NSLog(@"%@%@", @"Video muted changed: ", data[@"muted"]);
 }
-
+// Implement the showChat method of the JitsiMeetViewDelegate protocol
+- (void)showChat:(NSDictionary *)data {
+    // Open the chat screen
+    NSLog(@"Chat icon tapped");
+}
+-(void)OpenChat{
+}
 #pragma mark - Helpers
 
 - (void)terminate {

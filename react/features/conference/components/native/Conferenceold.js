@@ -60,6 +60,8 @@ import { EXPANDED_LABEL_TIMEOUT } from './constants';
 import styles from './styles';
 
 var totalUser = '0';
+const { OpenMelpModule } = NativeModules;
+
 
 /**
  * The type of the React {@code Component} props of {@link Conference}.
@@ -409,7 +411,7 @@ class Conference extends AbstractConference<Props, State> {
             alwaysOnTitleBarStyles = styles.alwaysOnTitleBar;
 
         }
-        OpenMelpChat.isAudioMode(false);
+        OpenMelpModule.isAudioMode(false);
 
         return (
             <>
@@ -599,7 +601,8 @@ function _mapStateToProps(state) {
 
     if(totalUser!=participantCount){
         totalUser  = participantCount
-    NativeModules.NativeCallsNew.totalUsers(participantCount);
+    OpenMelpModule.totalUsers(participantCount);
+
 }
 
     return {

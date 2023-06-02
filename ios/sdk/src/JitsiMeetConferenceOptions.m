@@ -34,6 +34,7 @@
         _featureFlags = [[NSMutableDictionary alloc] init];
 
         _userInfo = nil;
+        _incomingCallInfo = nil;
     }
     
     return self;
@@ -45,6 +46,22 @@
 
 - (void)setFeatureFlag:(NSString *)flag withValue:(id)value {
     _featureFlags[flag] = value;
+}
+
+- (void)setGroupCall:(BOOL)groupCall {
+    [self setConfigOverride:@"isGroupCall" withBoolean:groupCall];
+}
+
+- (void)setIsPrivateRoom:(BOOL)isPrivateRoom{
+    [self setConfigOverride:@"isPrivateRoom" withBoolean:isPrivateRoom];
+}
+
+- (void)setTeamName:(NSString *_Nonnull)teamName {
+    [self setConfigOverride:@"teamName" withValue:teamName];
+}
+
+- (void)setUserPicUrl:(NSString *_Nonnull)picUrl {
+    [self setConfigOverride:@"userPicUrl" withValue:picUrl];
 }
 
 - (void)setAudioOnly:(BOOL)audioOnly {
@@ -107,6 +124,7 @@
         _featureFlags = [NSDictionary dictionaryWithDictionary:builder.featureFlags];
 
         _userInfo = builder.userInfo;
+        _incomingCallInfo = builder.incomingCallInfo;
     }
 
     return self;
@@ -150,6 +168,10 @@
         props[@"userInfo"] = [self.userInfo asDict];
     }
 
+    if (_incomingCallInfo != nil) {
+        props[@"incomingCallInfo"] = [self.incomingCallInfo asDict];
+    }
+    
     urlProps[@"config"] = _config;
     props[@"url"] = urlProps;
 

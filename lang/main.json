@@ -33,8 +33,8 @@
         "car": "Car Audio",
         "headphones": "Headphones",
         "none": "No audio devices available",
-        "phone": "Phone",
-        "speaker": "Speaker"
+        "phone": "Speaker Off",
+        "speaker": "Speaker On"
     },
     "audioOnly": {
         "audioOnly": "Low bandwidth"

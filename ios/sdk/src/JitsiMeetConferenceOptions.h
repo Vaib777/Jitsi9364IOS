@@ -17,7 +17,7 @@
 #import <Foundation/Foundation.h>
 
 #import "JitsiMeetUserInfo.h"
-
+#import "IncomingCallInfo.h"
 
 @interface JitsiMeetConferenceOptionsBuilder : NSObject
 
@@ -45,6 +45,7 @@
  * Information about the local user. It will be used in absence of a token.
  */
 @property (nonatomic, nullable) JitsiMeetUserInfo *userInfo;
+@property (nonatomic, nullable) IncomingCallInfo *incomingCallInfo;
 
 - (void)setFeatureFlag:(NSString *_Nonnull)flag withBoolean:(BOOL)value;
 - (void)setFeatureFlag:(NSString *_Nonnull)flag withValue:(id _Nonnull)value;
@@ -53,6 +54,12 @@
 - (void)setConfigOverride:(NSString *_Nonnull)config withValue:(id _Nonnull)value;
 - (void)setConfigOverride:(NSString *_Nonnull)config withDictionary:(NSDictionary * _Nonnull)dictionary;
 - (void)setConfigOverride:(NSString *_Nonnull)config withArray:( NSArray * _Nonnull)array;
+
+- (void)setGroupCall:(BOOL)groupCall;
+- (void)setIsPrivateRoom:(BOOL)isPrivateRoom;
+- (void)setTeamName:(NSString *_Nonnull)teamName;
+- (void)setUserPicUrl:(NSString *_Nonnull)picUrl;
+- (void)setIncomingCallInfo:(IncomingCallInfo *_Nonnull)incomingCallInfo;
 
 - (void)setAudioOnly:(BOOL)audioOnly;
 - (void)setAudioMuted:(BOOL)audioMuted;
@@ -73,6 +80,7 @@
 @property (nonatomic, readonly, nonnull) NSDictionary *featureFlags;
 
 @property (nonatomic, nullable) JitsiMeetUserInfo *userInfo;
+@property (nonatomic, nullable) IncomingCallInfo *incomingCallInfo;
 
 + (instancetype _Nonnull)fromBuilder:(void (^_Nonnull)(JitsiMeetConferenceOptionsBuilder *_Nonnull))initBlock;
 - (instancetype _Nonnull)init NS_UNAVAILABLE;

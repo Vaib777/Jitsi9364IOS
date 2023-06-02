@@ -34,10 +34,9 @@ typedef enum {
 static NSString * const kDevicesChanged = @"org.jitsi.meet:features/audio-mode#devices-update";
 
 // Device types (must match JS and Java)
-static NSString * const kDeviceTypeBluetooth  = @"BLUETOOTH";
-static NSString * const kDeviceTypeCar        = @"CAR";
-static NSString * const kDeviceTypeEarpiece   = @"EARPIECE";
 static NSString * const kDeviceTypeHeadphones = @"HEADPHONES";
+static NSString * const kDeviceTypeBluetooth  = @"BLUETOOTH";
+static NSString * const kDeviceTypeEarpiece   = @"EARPIECE";
 static NSString * const kDeviceTypeSpeaker    = @"SPEAKER";
 static NSString * const kDeviceTypeUnknown    = @"UNKNOWN";
 
@@ -190,7 +189,7 @@ RCT_EXPORT_METHOD(setAudioDevice:(NSString *)device
     
     // The speaker is special, so test for it first.
     if ([device isEqualToString:kDeviceTypeSpeaker]) {
-        forceSpeaker = YES;
+        forceSpeaker = NO;
         success = [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:&error];
     } else {
         // Here we use AVAudioSession because RTCAudioSession doesn't expose availableInputs.
@@ -247,8 +246,6 @@ RCT_EXPORT_METHOD(updateDeviceList) {
 - (void)audioSessionDidChangeRoute:(RTCAudioSession *)session
                             reason:(AVAudioSessionRouteChangeReason)reason
                      previousRoute:(AVAudioSessionRouteDescription *)previousRoute {
-    RCTLogInfo(@"[AudioMode] Route changed, reason: %lu", (unsigned long)reason);
-
     // Update JS about the changes.
     [self notifyDevicesChanged];
 
@@ -278,6 +275,7 @@ RCT_EXPORT_METHOD(updateDeviceList) {
             RTCAudioSessionConfiguration *config = [self configForMode:self->activeMode];
             [self setConfig:config error:nil];
             if (self->forceSpeaker && !self->isSpeakerOn) {
+                RTCAudioSession *session = JitsiAudioSession.rtcAudioSession;
                 [session lockForConfiguration];
                 [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
                 [session unlockForConfiguration];
@@ -323,8 +321,6 @@ RCT_EXPORT_METHOD(updateDeviceList) {
             || [portType isEqualToString:AVAudioSessionPortBluetoothLE]
             || [portType isEqualToString:AVAudioSessionPortBluetoothA2DP]) {
         return kDeviceTypeBluetooth;
-    } else if ([portType isEqualToString:AVAudioSessionPortCarAudio]) {
-        return kDeviceTypeCar; 
     } else {
         return kDeviceTypeUnknown;
     }

@@ -33,12 +33,21 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>WKAppBundleIdentifier</key>
-			<string>org.jitsi.meet.watchkit</string>
+			<string>com.jitsi.meets.watchkit</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
 	</dict>
 	<key>WKExtensionDelegateClassName</key>
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
+  <key>UIAppFonts</key>
+  <array>
+    <string>AkzidenzGroteskPro-Bold.otf</string>
+    <string>AkzidenzGroteskPro-It.otf</string>
+    <string>AkzidenzGroteskPro-Light.otf</string>
+    <string>AkzidenzGroteskPro-Md.otf</string>
+    <string>AkzidenzGroteskPro-Regular.otf</string>
+    <string>AkzidenzGroteskPro-Super.otf</string>
+  </array>
 </dict>
 </plist>

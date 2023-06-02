@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		099C7F932A26175D002BEB9D /* JitsiMeetSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 099C7F922A26175D002BEB9D /* JitsiMeetSDK.framework */; };
 		0B412F1F1EDEE6E800B1A0A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B412F1E1EDEE6E800B1A0A6 /* ViewController.m */; };
 		0B412F211EDEE95300B1A0A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B412F201EDEE95300B1A0A6 /* Main.storyboard */; };
 		0B5418471F7C5D8C00A2DD86 /* MeetingRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5418461F7C5D8C00A2DD86 /* MeetingRowController.swift */; };
@@ -23,7 +24,6 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2681BB562C7A0B42CFBA6719 /* libPods-JitsiMeet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6152FF9E9F7B0E86F70A21D /* libPods-JitsiMeet.a */; };
 		4E90F9402632D1AB001102D4 /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E90F93F2632D1AB001102D4 /* Atomic.swift */; };
 		4EB06024260E026600F524C5 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC49B8625BED71300E76218 /* ReplayKit.framework */; };
 		4EB06027260E026600F524C5 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB06026260E026600F524C5 /* SampleHandler.swift */; };
@@ -31,14 +31,18 @@
 		4EB0603C260E09D000F524C5 /* SocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB06039260E09D000F524C5 /* SocketConnection.swift */; };
 		4EB0603D260E09D000F524C5 /* DarwinNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB0603A260E09D000F524C5 /* DarwinNotificationCenter.swift */; };
 		4EB0603E260E09D000F524C5 /* SampleUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB0603B260E09D000F524C5 /* SampleUploader.swift */; };
+		C5A74A28117CDA36E705BFB5 /* libPods-JitsiMeet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6152FF9E9F7B0E86F70A21D /* libPods-JitsiMeet.a */; };
 		DE4C456121DE1E4E00EA0709 /* FIRUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4C455F21DE1E4E00EA0709 /* FIRUtilities.m */; };
-		DEA9F289258A6EA800D4CD74 /* JitsiMeetSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA9F288258A6EA800D4CD74 /* JitsiMeetSDK.framework */; };
 		DEA9F28A258A6EA800D4CD74 /* JitsiMeetSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEA9F288258A6EA800D4CD74 /* JitsiMeetSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DED016F128ECBC9D009D5E8D /* WebRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED016F028ECBC9D009D5E8D /* WebRTC.xcframework */; };
 		DED016F228ECBC9D009D5E8D /* WebRTC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DED016F028ECBC9D009D5E8D /* WebRTC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E588011722789D43008B0561 /* JitsiMeetContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58801132278944E008B0561 /* JitsiMeetContext.swift */; };
 		E5C97B63227A1EB400199214 /* JitsiMeetCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C97B62227A1EB400199214 /* JitsiMeetCommands.swift */; };
-		FD572B9827EDF32300A800FB /* GiphyUISDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD572B9727EDF32300A800FB /* GiphyUISDK.xcframework */; };
+		FB508AE5299E44A800B68AB8 /* AkzidenzGroteskPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = FB508ADF299E44A800B68AB8 /* AkzidenzGroteskPro-It.otf */; };
+		FB508AE6299E44A800B68AB8 /* AkzidenzGroteskPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FB508AE0299E44A800B68AB8 /* AkzidenzGroteskPro-Regular.otf */; };
+		FB508AE7299E44A800B68AB8 /* AkzidenzGroteskPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = FB508AE1299E44A800B68AB8 /* AkzidenzGroteskPro-Light.otf */; };
+		FB508AE8299E44A800B68AB8 /* AkzidenzGroteskPro-Super.otf in Resources */ = {isa = PBXBuildFile; fileRef = FB508AE2299E44A800B68AB8 /* AkzidenzGroteskPro-Super.otf */; };
+		FB508AE9299E44A800B68AB8 /* AkzidenzGroteskPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FB508AE3299E44A800B68AB8 /* AkzidenzGroteskPro-Bold.otf */; };
+		FB508AEA299E44A800B68AB8 /* AkzidenzGroteskPro-Md.otf in Resources */ = {isa = PBXBuildFile; fileRef = FB508AE4299E44A800B68AB8 /* AkzidenzGroteskPro-Md.otf */; };
 		FD572B9927EDF32300A800FB /* GiphyUISDK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD572B9727EDF32300A800FB /* GiphyUISDK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -116,6 +120,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		099C7F922A26175D002BEB9D /* JitsiMeetSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JitsiMeetSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B26BE6D1EC5BC3C00EEFB41 /* JitsiMeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JitsiMeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B412F1D1EDEE6E800B1A0A6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0B412F1E1EDEE6E800B1A0A6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -141,7 +146,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3E0F4ED943C0B12BE77F6B45 /* Pods-JitsiMeet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JitsiMeet.release.xcconfig"; path = "Target Support Files/Pods-JitsiMeet/Pods-JitsiMeet.release.xcconfig"; sourceTree = "<group>"; };
+		1E4924B7E85C1ADF9F476160 /* Pods-JitsiMeet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JitsiMeet.debug.xcconfig"; path = "Target Support Files/Pods-JitsiMeet/Pods-JitsiMeet.debug.xcconfig"; sourceTree = "<group>"; };
 		4E90F93F2632D1AB001102D4 /* Atomic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
 		4EB06023260E026600F524C5 /* JitsiMeetBroadcastExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = JitsiMeetBroadcastExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB06026260E026600F524C5 /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
@@ -151,7 +156,7 @@
 		4EB0603A260E09D000F524C5 /* DarwinNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarwinNotificationCenter.swift; sourceTree = "<group>"; };
 		4EB0603B260E09D000F524C5 /* SampleUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleUploader.swift; sourceTree = "<group>"; };
 		4EC49B8625BED71300E76218 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
-		756FCE06C08D9B947653C98A /* Pods-JitsiMeet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JitsiMeet.debug.xcconfig"; path = "Target Support Files/Pods-JitsiMeet/Pods-JitsiMeet.debug.xcconfig"; sourceTree = "<group>"; };
+		84C7A2477097DA9318EEEFB8 /* Pods-JitsiMeet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JitsiMeet.release.xcconfig"; path = "Target Support Files/Pods-JitsiMeet/Pods-JitsiMeet.release.xcconfig"; sourceTree = "<group>"; };
 		B3B083EB1D4955FF0069CEE7 /* app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = app.entitlements; sourceTree = "<group>"; };
 		D6152FF9E9F7B0E86F70A21D /* libPods-JitsiMeet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JitsiMeet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE050388256E904600DEE3A5 /* WebRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = WebRTC.xcframework; path = "../../node_modules/react-native-webrtc/apple/WebRTC.xcframework"; sourceTree = "<group>"; };
@@ -162,6 +167,12 @@
 		DEFDBBDB25656E3B00344B23 /* WebRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = WebRTC.xcframework; path = "../../node_modules/react-native-webrtc/ios/WebRTC.xcframework"; sourceTree = "<group>"; };
 		E58801132278944E008B0561 /* JitsiMeetContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JitsiMeetContext.swift; sourceTree = "<group>"; };
 		E5C97B62227A1EB400199214 /* JitsiMeetCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JitsiMeetCommands.swift; sourceTree = "<group>"; };
+		FB508ADF299E44A800B68AB8 /* AkzidenzGroteskPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AkzidenzGroteskPro-It.otf"; path = "Resources/AkzidenzGroteskPro-It.otf"; sourceTree = SOURCE_ROOT; };
+		FB508AE0299E44A800B68AB8 /* AkzidenzGroteskPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AkzidenzGroteskPro-Regular.otf"; path = "Resources/AkzidenzGroteskPro-Regular.otf"; sourceTree = SOURCE_ROOT; };
+		FB508AE1299E44A800B68AB8 /* AkzidenzGroteskPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AkzidenzGroteskPro-Light.otf"; path = "Resources/AkzidenzGroteskPro-Light.otf"; sourceTree = SOURCE_ROOT; };
+		FB508AE2299E44A800B68AB8 /* AkzidenzGroteskPro-Super.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AkzidenzGroteskPro-Super.otf"; path = "Resources/AkzidenzGroteskPro-Super.otf"; sourceTree = SOURCE_ROOT; };
+		FB508AE3299E44A800B68AB8 /* AkzidenzGroteskPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AkzidenzGroteskPro-Bold.otf"; path = "Resources/AkzidenzGroteskPro-Bold.otf"; sourceTree = SOURCE_ROOT; };
+		FB508AE4299E44A800B68AB8 /* AkzidenzGroteskPro-Md.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AkzidenzGroteskPro-Md.otf"; path = "Resources/AkzidenzGroteskPro-Md.otf"; sourceTree = SOURCE_ROOT; };
 		FD572B9727EDF32300A800FB /* GiphyUISDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GiphyUISDK.xcframework; path = ../Pods/Giphy/GiphySDK/GiphyUISDK.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,10 +188,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DED016F128ECBC9D009D5E8D /* WebRTC.xcframework in Frameworks */,
-				DEA9F289258A6EA800D4CD74 /* JitsiMeetSDK.framework in Frameworks */,
-				FD572B9827EDF32300A800FB /* GiphyUISDK.xcframework in Frameworks */,
-				2681BB562C7A0B42CFBA6719 /* libPods-JitsiMeet.a in Frameworks */,
+				099C7F932A26175D002BEB9D /* JitsiMeetSDK.framework in Frameworks */,
+				C5A74A28117CDA36E705BFB5 /* libPods-JitsiMeet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +214,7 @@
 		0B26BE711EC5BC4D00EEFB41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				099C7F922A26175D002BEB9D /* JitsiMeetSDK.framework */,
 				DED016F028ECBC9D009D5E8D /* WebRTC.xcframework */,
 				FD572B9727EDF32300A800FB /* GiphyUISDK.xcframework */,
 				DEA9F288258A6EA800D4CD74 /* JitsiMeetSDK.framework */,
@@ -265,6 +275,16 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		473C3CE7815C11668C547DD3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E4924B7E85C1ADF9F476160 /* Pods-JitsiMeet.debug.xcconfig */,
+				84C7A2477097DA9318EEEFB8 /* Pods-JitsiMeet.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
 		4EB06025260E026600F524C5 /* JitsiMeetBroadcast Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,13 +306,14 @@
 			isa = PBXGroup;
 			children = (
 				B3B083EB1D4955FF0069CEE7 /* app.entitlements */,
+				FB508ADE299E448B00B68AB8 /* Resource */,
 				0B26BE711EC5BC4D00EEFB41 /* Frameworks */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				13B07FAE1A68108700A75B9A /* src */,
 				0BEA5C261F7B8F73000D0AB4 /* Watch app */,
 				0BEA5C351F7B8F73000D0AB4 /* WatchKit extension */,
 				4EB06025260E026600F524C5 /* JitsiMeetBroadcast Extension */,
-				CDD71F5E1157E9F283DF92A8 /* Pods */,
+				473C3CE7815C11668C547DD3 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -309,14 +330,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CDD71F5E1157E9F283DF92A8 /* Pods */ = {
+		FB508ADE299E448B00B68AB8 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				756FCE06C08D9B947653C98A /* Pods-JitsiMeet.debug.xcconfig */,
-				3E0F4ED943C0B12BE77F6B45 /* Pods-JitsiMeet.release.xcconfig */,
+				FB508AE3299E44A800B68AB8 /* AkzidenzGroteskPro-Bold.otf */,
+				FB508ADF299E44A800B68AB8 /* AkzidenzGroteskPro-It.otf */,
+				FB508AE1299E44A800B68AB8 /* AkzidenzGroteskPro-Light.otf */,
+				FB508AE4299E44A800B68AB8 /* AkzidenzGroteskPro-Md.otf */,
+				FB508AE0299E44A800B68AB8 /* AkzidenzGroteskPro-Regular.otf */,
+				FB508AE2299E44A800B68AB8 /* AkzidenzGroteskPro-Super.otf */,
 			);
-			name = Pods;
-			path = ../Pods;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,12 +439,10 @@
 				TargetAttributes = {
 					0BEA5C241F7B8F73000D0AB4 = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = FC967L3QRG;
 						ProvisioningStyle = Automatic;
 					};
 					0BEA5C301F7B8F73000D0AB4 = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = FC967L3QRG;
 						ProvisioningStyle = Automatic;
 					};
 					13B07F861A680F5B00A75B9A = {
@@ -481,9 +503,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB508AE9299E44A800B68AB8 /* AkzidenzGroteskPro-Bold.otf in Resources */,
+				FB508AEA299E44A800B68AB8 /* AkzidenzGroteskPro-Md.otf in Resources */,
 				0B412F211EDEE95300B1A0A6 /* Main.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				FB508AE7299E44A800B68AB8 /* AkzidenzGroteskPro-Light.otf in Resources */,
+				FB508AE5299E44A800B68AB8 /* AkzidenzGroteskPro-It.otf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				FB508AE8299E44A800B68AB8 /* AkzidenzGroteskPro-Super.otf in Resources */,
+				FB508AE6299E44A800B68AB8 /* AkzidenzGroteskPro-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,7 +573,7 @@
 		};
 		69BC5020DBE393B56BD76636 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -717,11 +745,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = FC967L3QRG;
+				DEVELOPMENT_TEAM = 9EJM7G7DZN;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				IBSC_MODULE = JitsiMeetCompanion_Extension;
 				INFOPLIST_FILE = watchos/app/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = org.jitsi.meet.watchkit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jitsi.meets.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -785,7 +813,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = FC967L3QRG;
+				DEVELOPMENT_TEAM = 9EJM7G7DZN;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = watchos/extension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -793,7 +821,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.jitsi.meet.watchkit.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jitsi.meets.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -845,7 +873,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 756FCE06C08D9B947653C98A /* Pods-JitsiMeet.debug.xcconfig */;
+			baseConfigurationReference = 1E4924B7E85C1ADF9F476160 /* Pods-JitsiMeet.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -853,9 +881,10 @@
 				CODE_SIGN_ENTITLEMENTS = app.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = FC967L3QRG;
+				DEVELOPMENT_TEAM = 9EJM7G7DZN;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				INFOPLIST_FILE = src/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -868,7 +897,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.jitsi.meet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jitsi.meets;
 				PRODUCT_NAME = "jitsi-meet";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -876,7 +905,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E0F4ED943C0B12BE77F6B45 /* Pods-JitsiMeet.release.xcconfig */;
+			baseConfigurationReference = 84C7A2477097DA9318EEEFB8 /* Pods-JitsiMeet.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -885,7 +914,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FC967L3QRG;
+				DEVELOPMENT_TEAM = 9EJM7G7DZN;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				INFOPLIST_FILE = src/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -898,7 +927,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.jitsi.meet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jitsi.meets;
 				PRODUCT_NAME = "jitsi-meet";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
@@ -918,7 +947,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = FC967L3QRG;
+				DEVELOPMENT_TEAM = 9EJM7G7DZN;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "broadcast-extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -929,7 +958,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.jitsi.meet.broadcast.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jitsi.meets.broadcast.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;

@@ -101,12 +101,10 @@ function Toolbox(props: Props) {
                 style = { style }>
                 {additionalButtons.has('chat')
                       && <ChatButton
-                          styles = { buttonStylesBorderless }
-                          toggledStyles = { backgroundToggledStyle } />
+                          styles = { buttonStylesBorderless } />
                 }
                 {!_iAmVisitor && <AudioMuteButton
-                    styles = { buttonStylesBorderless }
-                    toggledStyles = { toggledButtonStyles } />
+                    styles = { buttonStylesBorderless } />
                 }
                  { _endConferenceSupported
                     ? <HangupMenuButton />
@@ -114,23 +112,19 @@ function Toolbox(props: Props) {
                         styles = { hangupButtonStyles } />
                 }
                 {!_iAmVisitor && <VideoMuteButton
-                    styles = { buttonStylesBorderless }
-                    toggledStyles = { toggledButtonStyles } />
+                    styles = { buttonStylesBorderless }/>
                 }
               
                 {!_iAmVisitor && additionalButtons.has('screensharing')
                     && <ScreenSharingButton styles = { buttonStylesBorderless } />}
                 {additionalButtons.has('raisehand') && (_reactionsEnabled && !_iAmVisitor
                     ? <ReactionsMenuButton
-                        styles = { buttonStylesBorderless }
-                        toggledStyles = { backgroundToggledStyle } />
+                        styles = { buttonStylesBorderless } />
                     : <RaiseHandButton
-                        styles = { buttonStylesBorderless }
-                        toggledStyles = { backgroundToggledStyle } />)}
+                        styles = { buttonStylesBorderless } />)}
                 {additionalButtons.has('tileview') && <TileViewButton styles = { buttonStylesBorderless } />}
                 {!_iAmVisitor && <OverflowMenuButton
-                    styles = { buttonStylesBorderless }
-                    toggledStyles = { toggledButtonStyles } />
+                    styles = { buttonStylesBorderless } />
                 }
                
             </SafeAreaView>

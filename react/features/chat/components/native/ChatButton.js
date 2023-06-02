@@ -10,6 +10,8 @@ import { screen } from '../../../mobile/navigation/routes';
 import { getUnreadPollCount } from '../../../polls/functions';
 import { getUnreadCount } from '../../functions';
 import {NativeModules} from 'react-native';
+const { OpenMelpModule } = NativeModules;
+
 
 type Props = AbstractButtonProps & {
 
@@ -31,7 +33,7 @@ class ChatButton extends AbstractButton<Props, *> {
     accessibilityLabel = 'toolbar.accessibilityLabel.chat';
     icon = IconMessage;
     label = 'toolbar.chat';
-    toggledIcon = IconChatUnread;
+    toggledIcon = IconMessage;
 
     /**
      * Handles clicking / pressing the button, and opens the appropriate dialog.
@@ -41,7 +43,7 @@ class ChatButton extends AbstractButton<Props, *> {
      */
     _handleClick() {
        // this.props._isPollsDisabled  ? navigate(screen.conference.chat) : navigate(screen.conference.chatandpolls.main);
-       NativeModules.NativeCallsNew.OpenChat();
+      OpenMelpModule.OpenChat();
 
     }
 

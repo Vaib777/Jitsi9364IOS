@@ -34,6 +34,9 @@
  * List of domains used for universal linking.
  */
 @property (copy, nonatomic, nullable) NSArray<NSString *> *universalLinkDomains;
+
+@property (nonatomic, assign) BOOL isAudioSpeakerClicked;
+
 /**
  * Default conference options used for all conferences. These options will be merged
  * with those passed to JitsiMeetView.join when joining a conference.
@@ -77,5 +80,9 @@
 - (BOOL)isCrashReportingDisabled;
 
 - (void)showSplashScreen:(UIView * _Nonnull) rootView;
+
+-(void)updateAudioSpeakerStatus:(BOOL)isSpeakerClicked;
+
+-(BOOL)audioSpeakerClickedStatus;
 
 @end

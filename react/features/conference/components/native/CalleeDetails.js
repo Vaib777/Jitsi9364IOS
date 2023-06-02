@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import CalleeBoxView from './CalleeBoxView';
 import {NativeModules} from 'react-native';
 const { AudioMode } = NativeModules;
+const { OpenMelpModule } = NativeModules;
 
 var updatedcallerDetails = "", updatedConnectionStatus = "", totalUser ="0", isFirstTimeAudioCall = true;
 
@@ -49,7 +50,7 @@ class CalleeDetails extends Component {
                  }
                 participantText = participantText + " + "+ `${participants.length-1}`
                 callerDetails = 'Conference Call'
-                NativeModules.NativeCallsNew.updatedUserName(participantText);
+                OpenMelpModule.updatedUserName(participantText);
             }
             else if(participants.length==1){
                 const filterarray =  participants.filter(p => !p.local)
@@ -60,8 +61,8 @@ class CalleeDetails extends Component {
                     }
                  }
                  callerDetails = updatedcallerDetails;
-                 NativeModules.NativeCallsNew.updatedUserName(participantText);
-            }
+                 OpenMelpModule.updatedUserName(participantText);
+                }
 
         }
         if(participants.length>0){
@@ -130,7 +131,7 @@ function _mapStateToProps(state: Object, ownProps: Props) {
     
     if(totalUser!=participantsCount){
         totalUser = participantsCount;
-    NativeModules.NativeCallsNew.totalUsers(participantsCount);
+        OpenMelpModule.totalUsers(participantsCount);
     }
 
 

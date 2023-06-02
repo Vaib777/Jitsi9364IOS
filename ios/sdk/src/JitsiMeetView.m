@@ -23,7 +23,7 @@
 #import "JitsiMeetView+Private.h"
 #import "ReactUtils.h"
 #import "RNRootView.h"
-
+#import "JSCommunicateComponent.h"
 
 /**
  * Backwards compatibility: turn the boolean prop into a feature flag.
@@ -40,10 +40,19 @@ static NSString *const PiPEnabledFeatureFlag = @"pip.enabled";
 
 #pragma mark Initializers
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self initWithXXX];
+    }
+
+    return self;
+}
+
 - (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
-        [self doInitialize];
+        [self initWithXXX];
     }
 
     return self;
@@ -52,7 +61,7 @@ static NSString *const PiPEnabledFeatureFlag = @"pip.enabled";
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self doInitialize];
+        [self initWithXXX];
     }
 
     return self;
@@ -62,9 +71,9 @@ static NSString *const PiPEnabledFeatureFlag = @"pip.enabled";
  * Internal initialization:
  *
  * - sets the background color
- * - registers necessary observers
+ * - initializes the external API scope
  */
-- (void)doInitialize {
+- (void)initWithXXX {
     // Set a background color which is in accord with the JavaScript and Android
     // parts of the application and causes less perceived visual flicker than
     // the default background color.
@@ -230,5 +239,33 @@ static NSString *const PiPEnabledFeatureFlag = @"pip.enabled";
         [self addSubview:rootView];
     }
 }
+
+-(void)startTimer{
+    RCTBridge *bridge = [[JitsiMeet sharedInstance] getReactBridge];
+    JSCommunicateComponent * component = [bridge moduleForName:@"JSCommunicateComponent"];
+    NSLog(@"What is component %@ ", component);
+    if (component) {
+        [component startTimer];
+        NSLog(@"What Calling START TIMER FROM JITSI VIEW is component %@ ", component);
+    }
+}
+-(void)stopTimer{
+    RCTBridge *bridge = [[JitsiMeet sharedInstance] getReactBridge];
+    JSCommunicateComponent * component = [bridge moduleForName:@"JSCommunicateComponent"];
+    if (component) {
+        [component stopTimer];
+    }
+}
++(void)sendConnectionStatus:(NSString *)status{
+    RCTBridge *bridge = [[JitsiMeet sharedInstance] getReactBridge];
+    JSCommunicateComponent * component = [bridge moduleForName:@"JSCommunicateComponent"];
+    if (component) {
+        [component sendConnectionStatus:status];
+    }
+}
+-(BOOL)isAudioCallSpeakerClicked{
+    return [[JitsiMeet sharedInstance] audioSpeakerClickedStatus];
+}
+
 
 @end

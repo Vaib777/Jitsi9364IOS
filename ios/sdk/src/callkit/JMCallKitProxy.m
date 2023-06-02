@@ -95,7 +95,7 @@ static CXProviderConfiguration *_providerConfiguration = nil;
 
 + (void)setEnabled:(BOOL)enabled {
     _enabled = enabled ;
-    
+    enabled = false; //Added by Pankaj Giri on 21st Feb 23
     if (!self.callKitProvider) {
         [self.provider invalidate];
     }
